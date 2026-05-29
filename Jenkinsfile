@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -9,15 +8,9 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/mdtariqueaziz/inventory-service.git'
-            }
-        }
-
         stage('Build') {
             steps {
-                sh 'mvn clean compile'
+                sh 'mvn clean install'
             }
         }
 
@@ -25,22 +18,6 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
-        }
-
-        stage('Package') {
-            steps {
-                sh 'mvn clean package'
-            }
-        }
-    }
-
-    post {
-        success {
-            echo 'Build Successful'
-        }
-
-        failure {
-            echo 'Build Failed'
         }
     }
 }
