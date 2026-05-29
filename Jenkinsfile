@@ -11,7 +11,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/mdtariqueaziz/payment-service.git'
+                git 'https://github.com/mdtariqueaziz/inventory-service.git'
             }
         }
 
