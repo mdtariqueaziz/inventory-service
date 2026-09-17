@@ -11,6 +11,8 @@ import lombok.*;
 @Builder
 public class Inventory {
 
+    //Test
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
